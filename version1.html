@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DMD Clothing - Premium Trousers</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:"Segoe UI", sans-serif;
+    background:#f8f9fa;
+    color:#2c3e50;
+    overflow-x:hidden;
+}
+
+/* ===================== HEADER + BANNER ===================== */
+
+.top-sale-banner{
+    background:#2c3e50;
+    color:white;
+    text-align:center;
+    padding:0.7rem;
+    font-size:0.95rem;
+}
+
+.header{
+    background:white;
+    box-shadow:0 2px 10px rgba(0,0,0,0.1);
+    position:sticky;
+    top:0;
+    z-index:50;
+}
+
+.nav-wrap{
+    max-width:1400px;
+    margin:auto;
+    padding:1rem 2rem;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:1.9rem;
+    font-weight:700;
+    color:#2c3e50;
+}
+
+.nav-menu{
+    list-style:none;
+    display:flex;
+    gap:2.5rem;
+}
+
+.nav-menu a{
+    text-decoration:none;
+    color:#5a6c7d;
+    font-weight:500;
+}
+
+/* ===================== MAIN LAYOUT ===================== */
+
+.hero-wrapper{
+    max-width:1500px;
+    margin:auto;
+    padding:2.5rem 2rem;
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:3rem;
+}
+
+/* ===================== IMAGE SECTION ===================== */
+
+.gallery-column{
+    position:sticky;
+    top:110px;
+}
+
+.main-image-box{
+    width:100%;
+    height:720px;   /* FULL IMAGE HEIGHT */
+    border-radius:14px;
+    overflow:hidden;
+    background:#ffffff;
+    box-shadow:0 4px 20px rgba(0,0,0,0.12);
+}
+
+.main-image-box img{
+    width:100%;
+    height:100%;
+    object-fit:contain;  /* SHOW FULL PRODUCT IMAGE */
+    background:#fff;
+    transition:0.4s ease;
+}
+
+.main-image-box img:hover{
+    transform:scale(1.06);
+}
+
+.thumb-scroll{
+    margin-top:1.5rem;
+    display:flex;
+    gap:1rem;
+    overflow-x:auto;
+    padding-bottom:0.3rem;
+}
+
+.thumb-item{
+    width:120px;
+    height:150px;
+    border:2px solid #e0e0e0;
+    border-radius:10px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:0.3s;
+}
+.thumb-item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+.thumb-item.active{
+    border-color:#2c3e50;
+}
+
+/* ===================== INFO PANEL ===================== */
+
+.info-panel{
+    padding-right:1rem;
+}
+
+.product-title{
+    font-size:2.4rem;
+    font-weight:700;
+}
+
+.subtxt{
+    margin-top:0.5rem;
+    color:#6c757d;
+    font-size:1.2rem;
+}
+
+/* rating */
+
+.rating-box{
+    margin-top:1.4rem;
+    background:white;
+    padding:1rem;
+    border-radius:12px;
+    display:flex;
+    align-items:center;
+    gap:1rem;
+}
+
+.stars{
+    color:#ffc107;
+    font-size:1.4rem;
+}
+
+/* price */
+
+.price-card{
+    margin-top:1.4rem;
+    background:white;
+    padding:1.4rem;
+    border-radius:12px;
+}
+
+.price-flex{
+    display:flex;
+    align-items:end;
+    gap:1rem;
+}
+
+.new-price{
+    font-size:2.2rem;
+    font-weight:700;
+}
+
+.old-price{
+    text-decoration:line-through;
+    color:#95a5a6;
+}
+
+.offbox{
+    background:#e8f5e9;
+    color:#2e7d32;
+    padding:0.4rem 0.8rem;
+    border-radius:8px;
+    font-weight:600;
+}
+
+/* social proof */
+
+.live-tag{
+    margin-top:1.2rem;
+    background:#fff3cd;
+    border-left:4px solid #ffc107;
+    padding:1rem;
+    border-radius:8px;
+    font-size:1.05rem;
+}
+
+/* size selector */
+
+.option-title{
+    margin-top:1.6rem;
+    font-weight:700;
+}
+
+.size-grid{
+    margin-top:0.8rem;
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:0.8rem;
+}
+
+.size-btn{
+    padding:0.8rem;
+    background:white;
+    border:2px solid #dee2e6;
+    border-radius:10px;
+    text-align:center;
+    cursor:pointer;
+    transition:0.3s;
+}
+.size-btn.active{
+    background:#2c3e50;
+    color:white;
+}
+
+/* qty */
+
+.qty-row{
+    margin-top:1rem;
+    display:flex;
+    align-items:center;
+    gap:1rem;
+}
+
+.qty-btn{
+    width:42px;
+    height:42px;
+    border-radius:10px;
+    background:white;
+    border:1px solid #ccc;
+    cursor:pointer;
+    font-size:1.3rem;
+}
+
+.qty-input{
+    width:70px;
+    height:42px;
+    text-align:center;
+    border-radius:10px;
+}
+
+/* buttons */
+
+.big-buttons{
+    margin-top:1.5rem;
+    display:flex;
+    gap:1rem;
+}
+
+.btn{
+    padding:1rem;
+    border-radius:12px;
+    font-weight:600;
+    cursor:pointer;
+    border:none;
+}
+
+.buy-btn{
+    flex:2;
+    background:#2c3e50;
+    color:white;
+    font-size:1.1rem;
+}
+
+.save-btn{
+    flex:1;
+    background:white;
+    border:2px solid #2c3e50;
+    color:#2c3e50;
+}
+
+/* ===================== NEW REVIEW SECTION ===================== */
+
+.review-block{
+    max-width:1500px;
+    margin:auto;
+    padding:3rem 2rem;
+    margin-top:4rem;
+    background:white;
+    border-radius:16px;
+}
+
+.rev-head{
+    font-size:2.2rem;
+    font-weight:700;
+    margin-bottom:1.5rem;
+}
+
+/* Review Rating Summary (bars like Amazon) */
+
+.rating-summary{
+    display:flex;
+    gap:3rem;
+}
+
+.rating-left{
+    text-align:center;
+}
+
+.big-rating{
+    font-size:3rem;
+    font-weight:700;
+    color:#ffc107;
+}
+
+.rating-bars{
+    flex:1;
+}
+
+.bar-row{
+    display:flex;
+    align-items:center;
+    gap:0.5rem;
+    margin-bottom:8px;
+}
+
+.bar{
+    height:10px;
+    background:#ddd;
+    width:80%;
+    border-radius:6px;
+    overflow:hidden;
+}
+
+.bar-fill{
+    height:100%;
+    background:#ffc107;
+}
+
+/* Review Cards */
+
+.review-grid{
+    margin-top:2rem;
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(360px,1fr));
+    gap:1.5rem;
+}
+
+.rev-card{
+    border:1px solid #e0e0e0;
+    padding:1.5rem;
+    border-radius:14px;
+    transition:0.3s;
+    background:white;
+}
+.rev-card:hover{
+    box-shadow:0 8px 20px rgba(0,0,0,0.12);
+}
+
+.rev-header{
+    display:flex;
+    align-items:center;
+    gap:1rem;
+}
+
+.rev-header img{
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.rev-name{
+    font-weight:700;
+}
+
+.rev-stars{
+    color:#ffc107;
+    margin-top:0.4rem;
+}
+
+.rev-pics{
+    display:flex;
+    gap:0.8rem;
+    margin-top:1rem;
+}
+
+.rev-pics img{
+    width:70px;
+    height:70px;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+/* ===================== FOOTER ===================== */
+
+footer{
+    margin-top:4rem;
+    background:#2c3e50;
+    color:#bdc3c7;
+    padding:3rem 0 1.5rem;
+}
+
+.footer-wrap{
+    max-width:1500px;
+    margin:auto;
+    padding:0 2rem;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr 1fr;
+    gap:2.5rem;
+}
+
+footer h3{
+    color:white;
+}
+
+/* version switch */
+
+.version-switch{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+}
+
+.version-btn{
+    padding:1rem 2rem;
+    border-radius:40px;
+    background:#2c3e50;
+    border:none;
+    color:white;
+    cursor:pointer;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="top-sale-banner">
+  🎉 MEGA SALE: Up to 50% OFF + Free Shipping Above ₹999
+</div>
+
+<header class="header">
+ <div class="nav-wrap">
+     <div class="logo">DMD CLOTHING</div>
+     <ul class="nav-menu">
+         <li><a href="#">Men</a></li>
+         <li><a href="#">Women</a></li>
+         <li><a href="#">Sale</a></li>
+     </ul>
+ </div>
+</header>
+
+<!-- ===================== MAIN ===================== -->
+
+<div class="hero-wrapper">
+
+    <!-- IMAGES -->
+    <div class="gallery-column">
+        <div class="main-image-box">
+            <img id="mainIMG" src="./image1.webp">
+        </div>
+
+        <div class="thumb-scroll">
+            <div class="thumb-item active" onclick="swapImage('./image1.webp', this)">
+                <img src="./image1.webp">
+            </div>
+            <div class="thumb-item" onclick="swapImage('./image2.webp', this)">
+                <img src="./image2.webp">
+            </div>
+            <div class="thumb-item" onclick="swapImage('./image3.webp', this)">
+                <img src="./image3.webp">
+            </div>
+            <div class="thumb-item" onclick="swapImage('./image4.webp', this)">
+                <img src="./image4.webp">
+            </div>
+            <div class="thumb-item" onclick="swapImage('./image5.webp', this)">
+                <img src="./image5.webp">
+            </div>
+            <div class="thumb-item" onclick="swapImage('./image6.webp', this)">
+                <img src="./image6.webp">
+            </div>
+        </div>
+    </div>
+
+    <!-- INFO PANEL -->
+    <div class="info-panel">
+        <h1 class="product-title">Premium Formal Trousers</h1>
+        <p class="subtxt">Stretchable Lycra Cotton • Polo Fit • Office Wear</p>
+
+        <div class="rating-box">
+            <div class="stars">★★★★★</div>
+            <div>4.8 (324 reviews)</div>
+        </div>
+
+        <div class="price-card">
+            <div class="price-flex">
+                <div class="new-price">₹1,349</div>
+                <div class="old-price">₹2,699</div>
+                <div class="offbox">50% OFF</div>
+            </div>
+        </div>
+
+        <div class="live-tag">
+            <strong id="liveView">52</strong> people are viewing | 
+            <strong id="liveSold">19</strong> sold today
+        </div>
+
+        <div class="option-title">Select Size</div>
+        <div class="size-grid">
+            <div class="size-btn">30</div>
+            <div class="size-btn">32</div>
+            <div class="size-btn">34</div>
+            <div class="size-btn active">36</div>
+            <div class="size-btn">38</div>
+            <div class="size-btn">40</div>
+        </div>
+
+        <div class="option-title">Quantity</div>
+        <div class="qty-row">
+            <button class="qty-btn" onclick="dec()">-</button>
+            <input id="qty" class="qty-input" type="number" value="1">
+            <button class="qty-btn" onclick="inc()">+</button>
+        </div>
+
+        <div class="big-buttons">
+            <button class="btn buy-btn">BUY NOW</button>
+            <button class="btn save-btn">❤️ SAVE</button>
+        </div>
+    </div>
+
+</div>
+
+<!-- ===================== REVIEWS ===================== -->
+
+<div class="review-block">
+
+    <div class="rev-head">Customer Reviews</div>
+
+    <div class="rating-summary">
+
+        <div class="rating-left">
+            <div class="big-rating">4.8 ★</div>
+            <p>Based on 324 reviews</p>
+        </div>
+
+        <div class="rating-bars">
+            <div class="bar-row">5 ★ <div class="bar"><div class="bar-fill" style="width:90%"></div></div></div>
+            <div class="bar-row">4 ★ <div class="bar"><div class="bar-fill" style="width:70%"></div></div></div>
+            <div class="bar-row">3 ★ <div class="bar"><div class="bar-fill" style="width:20%"></div></div></div>
+            <div class="bar-row">2 ★ <div class="bar"><div class="bar-fill" style="width:8%"></div></div></div>
+            <div class="bar-row">1 ★ <div class="bar"><div class="bar-fill" style="width:4%"></div></div></div>
+        </div>
+
+    </div>
+
+    <div class="review-grid">
+
+        <div class="rev-card">
+            <div class="rev-header">
+                <img src="https://i.pravatar.cc/150?img=12">
+                <div>
+                    <div class="rev-name">Rajesh Kumar ✔︎</div>
+                    <div class="rev-stars">★★★★★</div>
+                </div>
+            </div>
+            <p style="margin-top:1rem;">These trousers fit perfectly. Very comfortable and the stretch quality is amazing.</p>
+            <div class="rev-pics">
+                <img src="./image4.webp">
+                <img src="./image2.webp">
+            </div>
+        </div>
+
+        <div class="rev-card">
+            <div class="rev-header">
+                <img src="https://i.pravatar.cc/150?img=15">
+                <div>
+                    <div class="rev-name">Amit Sharma ✔︎</div>
+                    <div class="rev-stars">★★★★★</div>
+                </div>
+            </div>
+            <p style="margin-top:1rem;">Great fabric, classy look. Perfect for office wear. Highly recommended.</p>
+        </div>
+
+        <div class="rev-card">
+            <div class="rev-header">
+                <img src="https://i.pravatar.cc/150?img=26">
+                <div>
+                    <div class="rev-name">Priya Singh ✔︎</div>
+                    <div class="rev-stars">★★★★☆</div>
+                </div>
+            </div>
+            <p style="margin-top:1rem;">Bought for my husband and he loved it! A bit tight on the waist though.</p>
+            <div class="rev-pics">
+                <img src="./image3.webp">
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<!-- ===================== FOOTER ===================== -->
+
+<footer>
+<div class="footer-wrap">
+
+<div class="footer-grid">
+
+    <div>
+        <h3>DMD CLOTHING</h3>
+        <p>Premium formal wear you can trust.</p>
+    </div>
+
+    <div>
+        <h3>Shop</h3>
+        <p>Everything you need !</p>
+    </div>
+
+    <div>
+        <h3>Support</h3>
+        <p> Ishita072004@gmail.com</p>
+    </div>
+
+    <div>
+        <h3>Company</h3>
+        <a>2025</a>
+    </div>
+
+</div>
+
+</div>
+</footer>
+
+<!-- ===================== VERSION SWITCH ===================== -->
+
+<div class="version-switch">
+    <button class="version-btn" onclick="location.href='version2.html'">Next Version →</button>
+</div>
+
+<script>
+function swapImage(src, elem){
+    document.getElementById("mainIMG").src = src;
+    document.querySelectorAll(".thumb-item").forEach(t=>t.classList.remove("active"));
+    elem.classList.add("active");
+}
+
+function inc(){ let q=document.getElementById("qty"); q.value++; }
+function dec(){ let q=document.getElementById("qty"); if(q.value>1) q.value--; }
+
+setInterval(()=>{
+    document.getElementById("liveView").textContent = 40 + Math.floor(Math.random()*20);
+    document.getElementById("liveSold").textContent = 10 + Math.floor(Math.random()*10);
+},4000);
+</script>
+
+</body>
+</html>
